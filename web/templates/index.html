@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Backprop Classifier Demo</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Backpropagation Image Classifier (Demo)</h1>
+      <p class="sub">Now supports three classes: circle, square, and triangle.</p>
+
+      <section>
+        <h2>Select Run</h2>
+        <div class="row">
+          <select id="runSelect"></select>
+          <button id="refreshRuns">Refresh</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Training Metrics</h2>
+        <div class="row">
+          <canvas id="lossChart" width="500" height="200"></canvas>
+          <canvas id="accChart" width="500" height="200"></canvas>
+        </div>
+        <div class="row">
+          <img id="curvesImg" src="" alt="curves" style="max-width: 500px; display:none;" />
+        </div>
+      </section>
+
+      <section>
+        <h2>Predict</h2>
+        <div class="row">
+          <div class="col">
+            <label>Upload image:</label>
+            <input type="file" id="fileInput" accept="image/*" />
+          </div>
+          <div class="col">
+            <label>Or draw (white on black):</label>
+            <div>
+              <canvas id="drawCanvas" width="140" height="140" class="draw"></canvas>
+            </div>
+            <div class="row">
+              <button id="clearCanvas">Clear</button>
+              <button id="predictCanvas">Predict</button>
+            </div>
+          </div>
+        </div>
+        <div id="prediction"></div>
+        <div id="probs"></div>
+      </section>
+    </div>
+
+    <script src="/static/main.js"></script>
+  </body>
+  </html>
